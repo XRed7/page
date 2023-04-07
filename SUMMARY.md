@@ -11,11 +11,11 @@
 ## Writeups
 
 * [Hack The Box](writeups/hack-the-box/README.md)
-  * [Máquinas Linux](writeups/hack-the-box/maquinas-linux/README.md)
-    * [Basic Pentesting](writeups/hack-the-box/maquinas-linux/basic-pentesting.md)
+  * [Máquinas Linux](writeups/hack-the-box/maquinas-linux.md)
   * [Máquinas Windows](writeups/hack-the-box/maquinas-windows.md)
 * [TryHackMe](writeups/tryhackme/README.md)
-  * [Máquinas Linux](writeups/tryhackme/maquinas-linux.md)
+  * [Máquinas Linux](writeups/tryhackme/maquinas-linux/README.md)
+    * [Basic Pentesting](writeups/tryhackme/maquinas-linux/basic-pentesting.md)
   * [Máquinas Windows](writeups/tryhackme/maquinas-windows.md)
 * [Proving Grounds](writeups/proving-grounds/README.md)
   * [Máquinas Linux](writeups/proving-grounds/maquinas-linux/README.md)
