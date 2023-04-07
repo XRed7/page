@@ -11,7 +11,8 @@
 ## Writeups
 
 * [Hack The Box](writeups/hack-the-box/README.md)
-  * [Máquinas Linux](writeups/hack-the-box/maquinas-linux.md)
+  * [Máquinas Linux](writeups/hack-the-box/maquinas-linux/README.md)
+    * [Basic Pentesting](writeups/hack-the-box/maquinas-linux/basic-pentesting.md)
   * [Máquinas Windows](writeups/hack-the-box/maquinas-windows.md)
 * [TryHackMe](writeups/tryhackme/README.md)
   * [Máquinas Linux](writeups/tryhackme/maquinas-linux.md)
