@@ -1,4 +1,5 @@
 ---
+cover: ../../../.gitbook/assets/Arctic.png
 coverY: 0
 ---
 

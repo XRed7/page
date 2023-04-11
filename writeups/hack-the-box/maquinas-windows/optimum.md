@@ -1,4 +1,5 @@
 ---
+cover: ../../../.gitbook/assets/Optimum.png
 coverY: 0
 ---
 
