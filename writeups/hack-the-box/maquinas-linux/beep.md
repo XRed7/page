@@ -7,7 +7,7 @@ coverY: 0
 
 ## Reconocimiento
 
-Empezamos comprobando que tengamos conexion con la maquina enviando un traza con el protocolo **ICMP**
+Empezamos comprobando que tengamos conexión con la maquina enviando un traza con el protocolo **ICMP**
 
 ```shell
 > ping -c 1 10.10.10.7
@@ -46,7 +46,7 @@ PORT      STATE SERVICE          REASON
 Y con esos puertos vamos a scripts básicos de reconocimiento y escanear versiones
 
 ```shell
-nmap -sCV -p22,25,80,110,111,143,443,878,993,995,3306,4190,4445,4559,5038,10000 10.10.10.7 
+> nmap -sCV -p22,25,80,110,111,143,443,878,993,995,3306,4190,4445,4559,5038,10000 10.10.10.7 
 
 PORT      STATE SERVICE    VERSION
 22/tcp    open  ssh        OpenSSH 4.3 (protocol 2.0)
