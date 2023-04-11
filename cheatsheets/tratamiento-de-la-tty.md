@@ -4,7 +4,7 @@ En todos los casos, cuando recibimos una reverse shell vemos que nos toca una sh
 
 El comando `script /dev/null -c bash` inicia una nueva shell de bash en una sesión de script que se redirige al `/dev/null`, lo que significa que la salida del script no se guarda en ningún archivo y simplemente se descarta.
 
-<pre class="language-bash"><code class="lang-bash"><strong>www-data@host:/$ script /dev/null -c bash
+<pre class="language-bash"><code class="lang-bash"><strong>www-data@xxx:/$ script /dev/null -c bash
 </strong></code></pre>
 
 Luego hacemos un control + Z para salir-nos y se quede en segundo plano
@@ -12,8 +12,8 @@ Luego hacemos un control + Z para salir-nos y se quede en segundo plano
 Ahora resetearemos la configuración de la shell que dejamos en segundo plano indicando **reset xterm**
 
 ```bash
-stty raw -echo; fg
-[1]  + continued  nc -nlvp 443
+> stty raw -echo; fg
+[1]  + continued  nc -nlvp 4444
                 reset xterm
 ```
 
@@ -23,8 +23,8 @@ Exportamos las variables de entorno **TERM** y **SHELL**
 * `export SHELL=bash` → Para que nuestra shell sea una bash.
 
 ```bash
-www-data@host:/$ export TERM=xterm
-www-data@host:/$ export SHELL=bash
+www-data@xxx:/$ export TERM=xterm
+www-data@xxx:/$ export SHELL=bash
 ```
 
 Ya con esto hecho tendríamos una **TTY** full interactiva, pero falta una cosa para que sea lo más cómoda posible, setear las filas y columnas, esto sirve para poder ocupar toda nuestra pantalla, ya que en este momento solo podemos usar una porción de esta.
@@ -32,14 +32,14 @@ Ya con esto hecho tendríamos una **TTY** full interactiva, pero falta una cosa 
 Vemos el tamaño de columnas y filas de nuestra shell en una terminal aparte nuestra
 
 ```bash
-~$> ssty size
-40 123
+> stty size
+20 102
 ```
 
-Y las seteamos en la reverse shell
+Y en la reverse shell seteamos las filas y columnas
 
 ```bash
-www-data@host:/$ stty rows 40 columns 123 # (en mi caso son 40 filas y 123 columnas)
+www-data@xxx:/$ stty rows 20 columns 102 # (en mi caso son 20 filas y 103 columnas)
 ```
 
 Y listo!, ya podemos disfrutar de una shell totalmente interactiva.

