@@ -5,6 +5,10 @@
 ## ❤ Cheatsheets
 
 * [Tratamiento de la TTY](cheatsheets/tratamiento-de-la-tty.md)
+* [Docker](cheatsheets/docker.md)
+* [Reconocimiento](cheatsheets/reconocimiento/README.md)
+  * [Nmap](cheatsheets/reconocimiento/nmap.md)
+  * [Alternativas para la enumeración de puertos usando descriptores de archivo](cheatsheets/reconocimiento/alternativas-para-la-enumeracion-de-puertos-usando-descriptores-de-archivo.md)
 
 ## 💜 Writeups
 
