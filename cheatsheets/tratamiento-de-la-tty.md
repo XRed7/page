@@ -2,12 +2,12 @@
 
 En todos los casos, cuando recibimos una reverse shell vemos que nos toca una shell muy inestable que le das a control + c y se cierra y tenemos que hacer otra vez el mismo procedimiento de recibir una reverse shell para que no pase esto haremos un tratamiento de la tty.&#x20;
 
-El comando `script /dev/null -c bash` inicia una nueva shell de bash en una sesión de script que se redirige al `/dev/null`, lo que significa que la salida del script no se guarda en ningún archivo y simplemente se descarta.
+El comando **➜** `script /dev/null -c bash` inicia una nueva shell de bash en una sesión de script que se redirige al **/dev/null**, lo que significa que la salida del script no se guarda en ningún archivo y simplemente se descarta.
 
 <pre class="language-bash"><code class="lang-bash"><strong>www-data@xxx:/$ script /dev/null -c bash
 </strong></code></pre>
 
-Luego hacemos un control + Z para salir-nos y se quede en segundo plano
+Luego hacemos un **Control + Z** para salir-nos y se quede en segundo plano
 
 Ahora resetearemos la configuración de la shell que dejamos en segundo plano indicando **reset xterm**
 
@@ -19,8 +19,8 @@ Ahora resetearemos la configuración de la shell que dejamos en segundo plano in
 
 Exportamos las variables de entorno **TERM** y **SHELL**
 
-* `export TERM=xterm` → Debemos hacer esto porque a pesar de haberle indicado que queríamos una **xterm** al momento de reiniciarlo, la variable de entorno **TERM** vale **dump** (Se usa esta variable para poder usar los atajos de teclado).
-* `export SHELL=bash` → Para que nuestra shell sea una bash.
+* `export TERM=xterm` **➜** Debemos hacer esto porque a pesar de haberle indicado que queríamos una **xterm** al momento de reiniciarlo, la variable de entorno **TERM** vale **dump** (Se usa esta variable para poder usar los atajos de teclado).
+* `export SHELL=bash` **➜** Para que nuestra shell sea una bash.
 
 ```bash
 www-data@xxx:/$ export TERM=xterm

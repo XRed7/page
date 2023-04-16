@@ -22,7 +22,7 @@ PING 10.10.10.14 (10.10.10.14) 56(84) bytes of data.
 rtt min/avg/max/mdev = 34.592/34.592/34.592/0.000 ms
 ```
 
-Tenemos conexión con la maquina entonces vamos a escanear todo el rango de puertos abiertos por el protocolo `TCP`
+Tenemos conexión con la maquina entonces vamos a escanear todo el rango de puertos abiertos por el protocolo **TCP**
 
 ```shell
 > nmap -p- --open -sS --min-rate 5000 -vvv -n -Pn 10.10.10.14
@@ -53,7 +53,7 @@ Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
 
 ### Puerto 80 (http)
 
-Buscamos vulnerabilidades asociadas a IIS 6.0 y encontramos el siguiente recurso https://www.exploit-db.com/exploits/41738 que podemos aprovechar el **CVE** para buscar otro exploit y buscamos en google `2017-7269 exploit github` y encontramos un repositorio de github interesante en https://github.com/g0rx/iis6-exploit-2017-CVE-2017-7269/blob/master/iis6%20reverse%20shell
+Buscamos vulnerabilidades asociadas a IIS 6.0 y encontramos el siguiente recurso [https://www.exploit-db.com/exploits/41738](https://www.exploit-db.com/exploits/41738) que podemos aprovechar el **CVE** para buscar otro exploit y buscamos en google **2017-7269 exploit github** y encontramos un repositorio de github interesante en [https://github.com/g0rx/iis6-exploit-2017-CVE-2017-7269/blob/master/iis6%20reverse%20shell](https://github.com/g0rx/iis6-exploit-2017-CVE-2017-7269/blob/master/iis6%20reverse%20shell)
 
 #### Explotación
 
@@ -271,7 +271,7 @@ OS Version:                5.2.3790 Service Pack 2 Build 3790
 
 Vemos que tenemos el **SeImpersonatePrivilege** habilitado y podríamos abusar de esto con **juicypotato** pero se ve que no funciona con las versiones de windows server 2003 y hay que utilizar **churrasco.exe** que es una alternativa.
 
-* Descargar **churrasco.exe** en https://binaryregion.wordpress.com/2021/08/04/privilege-escalation-windows-churrasco-exe/
+* Descargar **churrasco.exe** en [https://binaryregion.wordpress.com/2021/08/04/privilege-escalation-windows-churrasco-exe/](https://binaryregion.wordpress.com/2021/08/04/privilege-escalation-windows-churrasco-exe/)
 
 ```shell
 > mv /home/red/Descargas/churrasco.exe .

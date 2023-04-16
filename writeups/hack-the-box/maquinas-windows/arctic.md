@@ -94,11 +94,11 @@ Shellcodes: No Results
 
 Vemos que hay un directory path traversal que lo que hace es ir hasta la raíz del sistema windows y hacer un **LFI** que significa leer un archivo de la maquina. Y al parecer es un archivo que contiene la contraseña hasheada del usuario **admin**
 
-* La crackeamos con https://crackstation.net
+* La crackeamos con [https://crackstation.net](https://crackstation.net)
 
 <figure><img src="../../../.gitbook/assets/crack-hash.PNG" alt=""><figcaption></figcaption></figure>
 
-`2F635F6D20E3FDE0C53075A84B68FB07DCEC9B03` --> happyday
+`2F635F6D20E3FDE0C53075A84B68FB07DCEC9B03` **-->** happyday
 
 * Nos logeamos
 
@@ -185,7 +185,7 @@ SeCreateGlobalPrivilege       Create global objects                     Enabled
 SeIncreaseWorkingSetPrivilege Increase a process working set            Disabled
 ```
 
-Vemos que el **SeImpersonatePrivilege** esta habilitado y como esta habilitado podemos abusar de el para ejecutar comandos de forma privilegiada con juicypotato(**https://github.com/ohpe/juicy-potato/releases/tag/v0.1**) y netcat
+Vemos que el **SeImpersonatePrivilege** esta habilitado y como esta habilitado podemos abusar de el para ejecutar comandos de forma privilegiada con juicypotato([**https://github.com/ohpe/juicy-potato/releases/tag/v0.1**](https://github.com/ohpe/juicy-potato/releases/tag/v0.1)) y netcat
 
 ```shell
 > mv /home/red/Descargas/JuicyPotato.exe .

