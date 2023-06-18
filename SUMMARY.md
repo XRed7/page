@@ -11,7 +11,12 @@
   * [Alternativas para la enumeración de puertos usando descriptores de archivo](cheatsheets/reconocimiento/alternativas-para-la-enumeracion-de-puertos-usando-descriptores-de-archivo.md)
 * [Vulnerabilidades](cheatsheets/vulnerabilidades/README.md)
   * [SQL Injection (Inyección SQL)](cheatsheets/vulnerabilidades/sql-injection-inyeccion-sql.md)
-  * [XML External Entity Injection (XXE)](cheatsheets/vulnerabilidades/xml-external-entity-injection-xxe.md)
+  * [Local File Inclusion (LFI)](cheatsheets/vulnerabilidades/local-file-inclusion-lfi.md)
+  * [Log Poisoning (LFI to RCE)](cheatsheets/vulnerabilidades/log-poisoning-lfi-to-rce.md)
+  * [Server-Side Request Forgery (SSRF)](cheatsheets/vulnerabilidades/server-side-request-forgery-ssrf.md)
+  * [Server-Side Template Injection (SSTI)](cheatsheets/vulnerabilidades/server-side-template-injection-ssti.md)
+  * [Type Juggling Attack](cheatsheets/vulnerabilidades/type-juggling-attack.md)
+  * [Deserialitzation Attack](cheatsheets/vulnerabilidades/deserialitzation-attack.md)
 
 ## 💜 Writeups
 
