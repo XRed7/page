@@ -9,6 +9,9 @@
 * [Reconocimiento](cheatsheets/reconocimiento/README.md)
   * [Nmap](cheatsheets/reconocimiento/nmap.md)
   * [Alternativas para la enumeración de puertos usando descriptores de archivo](cheatsheets/reconocimiento/alternativas-para-la-enumeracion-de-puertos-usando-descriptores-de-archivo.md)
+* [Vulnerabilidades](cheatsheets/vulnerabilidades/README.md)
+  * [SQL Injection (Inyección SQL)](cheatsheets/vulnerabilidades/sql-injection-inyeccion-sql.md)
+  * [XML External Entity Injection (XXE)](cheatsheets/vulnerabilidades/xml-external-entity-injection-xxe.md)
 
 ## 💜 Writeups
 
