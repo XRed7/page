@@ -67,5 +67,7 @@
   * [Clase 7 INGLÉS-BÁSICO](ingles/apuntes/clase-7-ingles-basico.md)
   * [Clase 8 INGLÉS-BÁSICO](ingles/apuntes/clase-8-ingles-basico.md)
   * [Clase 9 INGLÉS-BÁSICO](ingles/apuntes/clase-9-ingles-basico.md)
+  * [Clase 10 INGLÉS BÁSICO](ingles/apuntes/clase-10-ingles-basico.md)
+  * [Clase 11 INGLÉS BÁSICO](ingles/apuntes/clase-11-ingles-basico.md)
 * [Exámenes](ingles/examenes/README.md)
   * [EXAMEN INGLÉS 1](ingles/examenes/examen-ingles-1.md)
