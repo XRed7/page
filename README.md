@@ -14,4 +14,4 @@ layout:
 
 # 😶 whoami
 
-Hola buenas, me llamo Abdelatif Houssami y soy un apasionado de la informática, siempre de pequeño me ha gustado, pero cuando descubrí la ciberseguridad me enamore a primera vista del campo y hasta día de hoy sigo aprendiendo sobre todo hacking offensivo que es lo que más me gusta del campo.
+Hola, me llamo Abdel (RED) y he creado este blog para recopilar mis apuntes sobre todo lo que estoy haciendo y estudiando. Principalmente, encontrarás temas de ciberseguridad, especialmente hacking ofensivo, pero también apuntes sobre el idioma inglés.
