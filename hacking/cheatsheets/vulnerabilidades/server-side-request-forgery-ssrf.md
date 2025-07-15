@@ -183,9 +183,9 @@ Serving HTTP on 127.0.0.1 port 4646 (http://127.0.0.1:4646/) ...
 Con el parámetro url de utility.php podemos poner dominios como por ejemplo google.com etc pero que pasa si apuntamos como url hacia la propia maquina y tiene un puerto interno abierto con un servidor web pues que podemos llegar a haver el contenido de este y se pude hacer de 2 formas.
 
 * Con el nombre **localhost** que hace referencia a la propia **maquina**:\
-  **➜** `http://172.17.0.2/utility.php?url=http://localhost:4646/login.html`
+  &#xNAN;**➜** `http://172.17.0.2/utility.php?url=http://localhost:4646/login.html`
 * Con la IP **127.0.0.1** que hace referencia a la propia **maquina**:\
-  **➜** `http://172.17.0.2/utility.php?url=http://127.0.0.1:4646/login.html`
+  &#xNAN;**➜** `http://172.17.0.2/utility.php?url=http://127.0.0.1:4646/login.html`
 
 Y como podemos llegar a ver si la propia maquina tiene puertos internos abiertos????
 

@@ -44,7 +44,7 @@ El presente continuo en inglés se utiliza para describir acciones que están oc
 
 #### **Conjugación de verbos en presente continuo**
 
-**Cocinar -> **_**to cook**_
+**Cocinar ->&#x20;**_**to cook**_
 
 1. **Estoy cocinando** -> _I am cooking_ -> _I'm cooking_.
 2. **Tú estás cocinando** -> _You are cooking_ -> _You're cooking_.

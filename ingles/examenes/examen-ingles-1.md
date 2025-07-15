@@ -41,7 +41,7 @@ icon: '1'
    b) Marie walks with my brother.\
    c) Marie is walking but my brother.\
    d) Marie walks but my brother.\
-   **(Ninguna opción es correcta)**
+   &#xNAN;**(Ninguna opción es correcta)**
 
 ***
 

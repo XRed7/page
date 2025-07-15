@@ -107,12 +107,7 @@ $ john --wordlist=/usr/share/wordlists/rockyou.txt hash
    Passw0rd         (?)
 ```
 
-4.  **Si es necesario, crackear el hash como Raw-MD5**:
+4. **Si es necesario, crackear el hash como Raw-MD5**:
 
-    ```bash
-    ```
-
-$ john --wordlist=/usr/share/wordlists/rockyou.txt --format=Raw-MD5 hash Loaded 1 password hash (Raw-MD5 \[MD5 128/128 SSE2 4x3]) Passw0rd (?)
-
-```
-```
+<pre class="language-bash"><code class="lang-bash"><strong>$ john --wordlist=/usr/share/wordlists/rockyou.txt --format=Raw-MD5 hash Loaded 1 password hash (Raw-MD5 [MD5 128/128 SSE2 4x3]) Passw0rd (?)
+</strong></code></pre>
