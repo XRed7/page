@@ -173,6 +173,9 @@ Finished
 ```
 
 * Encontramos el directorio internal donde podemos subir archivos intentamos subir un archivo en php pero se ve que tiene una restricción, podemos probar a poner otra exentesión php por ejemplo phtml y subir nuestra webshell:&#x20;
+
+<figure><img src="../../../.gitbook/assets/Captura de pantalla 2024-11-15 202231.png" alt=""><figcaption></figcaption></figure>
+
 * Cambiar el nombre del archivo:
 
 ```bash
